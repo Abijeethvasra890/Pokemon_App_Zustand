@@ -1,7 +1,7 @@
 import {create} from "zustand";
-
+//zustand state management - Central state management
 const store = (set) =>({
-    pokemons:[{}],
+    pokemons:[{}],//data used to set the Pokemons in PLP
     fetchPokemons : async (apiURL) => {
         try {
           const response = await fetch(apiURL);
@@ -11,7 +11,7 @@ const store = (set) =>({
           console.error("Error Fetching Pokemons", err);
         }
     },
-    pokemonData:'',
+    pokemonData:'',//data used to set the Pokemons in PDP
     fetchPokemonData : async (apiURL) => {
         try {
            // console.log(apiURL)

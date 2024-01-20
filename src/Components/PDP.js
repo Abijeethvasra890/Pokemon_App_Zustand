@@ -6,15 +6,15 @@ import { useStore } from '../store';
 const PDP = () => {
   const { id } = useParams();
   //const [pokemonData, setPokemonData] = useState(null);
-  const pokemonData = useStore((state)=> state.pokemonData)
-  const fetchPokemonData = useStore((state) => state.fetchPokemonData)
+  const pokemonData = useStore((state)=> state.pokemonData)//fetching data from Zustand Store
+  const fetchPokemonData = useStore((state) => state.fetchPokemonData)//fetching function from Zustand Store
   const apiURL = `https://pokeapi.co/api/v2/pokemon/${id}/`;
   const formattedId = String(id).padStart(3,'0');
   const imageURL = `https://assets.pokemon.com/assets/cms2/img/pokedex/full/${formattedId}.png`;
   //const imageURL = `https://assets.pokemon.com/assets/cms2/img/pokedex/full/00${id}.png`;
   
   useEffect(() => {
-    fetchPokemonData(apiURL);
+    fetchPokemonData(apiURL);//triggers the function in Zustand store
   }, []);
  // console.log("PDP",pokemonData)
   return (

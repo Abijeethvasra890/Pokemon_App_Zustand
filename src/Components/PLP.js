@@ -1,4 +1,3 @@
-// PLP.js
 import React, { useEffect, useState } from 'react';
 import PokemonCard from './PokemonCard';
 import NavBar from './NavBar';
@@ -7,11 +6,11 @@ import { useStore } from '../store';
 const PLP = () => {
   //const [pokemons, setPokemons] = useState([]);
   const apiURL = "https://pokeapi.co/api/v2/pokemon/";
-  const pokemons = useStore((state) => state.pokemons)
-  const fetchPokemons = useStore((state) => state.fetchPokemons)
+  const pokemons = useStore((state) => state.pokemons)//fetching data from Zustand Store
+  const fetchPokemons = useStore((state) => state.fetchPokemons)//fetching function from Zustand Store
 
   useEffect(() => {
-    fetchPokemons(apiURL);
+    fetchPokemons(apiURL);//triggers the function in Zustand store
   }, []);
   // /console.log("fetched", pokemons);
   return (
